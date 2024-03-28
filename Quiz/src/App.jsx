@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { QuizContext } from "./context/quiz";
 import Welcome from "./components/Welcome";
-import question from "./components/question";
+import Quest from "./components/Quest";
 
 import "./App.css";
 
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <h1>Quiz de Programação</h1>
       {quizState.gameStage === "Start" && <Welcome />}
-      {quizState.gameStage === "Playing" && <Welcome />}
+      {quizState.gameStage === "Playing" && <Quest />}
     </div>
   );
 }

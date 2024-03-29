@@ -6,7 +6,9 @@ const Quest = () => {
   console.log(quizState);
   return (
     <div id="question">
-      <p>Pergunta 0 a 10</p>
+      <p>
+        Pergunta {quizState.currentQuestion + 1} de {quizState.questions.length}
+      </p>
       <h2>Pergunta atual</h2>
       <div id="options-container">
         <p>Opções</p>

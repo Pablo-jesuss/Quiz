@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { QuizContext } from "./context/quiz";
 import Welcome from "./components/Welcome";
 import Quest from "./components/Quest";
-
+import GameOver from "./components/GameOver";
 import "./App.css";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       <h1>Quiz de Programação</h1>
       {quizState.gameStage === "Start" && <Welcome />}
       {quizState.gameStage === "Playing" && <Quest />}
+      {quizState.gameStage === "End" && <GameOver />}
     </div>
   );
 }

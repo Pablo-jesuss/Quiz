@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { QuizContext } from "../context/quiz";
 
+import "./Quest.css";
+
 const Quest = () => {
   const [quizState, dispatch] = useContext(QuizContext);
   const currentQuestion = quizState.questions[quizState.currentQuestion];

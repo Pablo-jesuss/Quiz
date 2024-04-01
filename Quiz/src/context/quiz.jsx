@@ -29,6 +29,14 @@ const quizReducer = (state, action) => {
         questions: reorderedQuestions,
       };
 
+    case "CHANGE_QUESTION":
+      const nexQuestion = state.currentQuestion + 1;
+
+      return {
+        ...state,
+        currentQuestion: nexQuestion,
+      };
+
     default:
       return state;
   }

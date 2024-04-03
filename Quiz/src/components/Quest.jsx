@@ -17,12 +17,18 @@ const Quest = () => {
       <h2>{currentQuestion.question}</h2>
       <div id="options-container">
         {currentQuestion.options.map((option) => (
-          <Option option={option} key={option} />
+          <Option
+            option={option}
+            key={option}
+            answer={currentQuestion.answer}
+          />
         ))}
       </div>
-      <button onClick={() => dispatch({ type: "CHANGE_QUESTION" })}>
-        Continuar
-      </button>
+      {quizState.answerSelected && (
+        <button onClick={() => dispatch({ type: "CHANGE_QUESTION" })}>
+          Continuar
+        </button>
+      )}
     </div>
   );
 };

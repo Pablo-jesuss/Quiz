@@ -10,7 +10,7 @@ const PinkCategory = () => {
     <div id="category">
       <h2>Escolha uma categoria</h2>
       <p>As perguntas serão referentes a uma das linguagens abaixo:</p>
-      <p>linguagens</p>
+      <button>CSS</button>
       <img src={Category} alt="Categorias do Quiz" />
     </div>
   );

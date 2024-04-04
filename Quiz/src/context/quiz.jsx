@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
-import questions from "../data/questions";
+import questions from "../data/questions_complete";
 
-const STAGES = ["Start", "Playing", "End"];
+const STAGES = ["Start", "Category", "Playing", "End"];
 
 const initialState = {
   gameStage: STAGES[0],
@@ -41,6 +41,7 @@ const quizReducer = (state, action) => {
         ...state,
         currentQuestion: nexQuestion,
         gameStage: endGame ? STAGES[2] : state.gameStage,
+        answerSelected: false,
       };
 
     case "NEW_GAME":

@@ -8,6 +8,12 @@ import "./PinkCategory.css";
 const PinkCategory = () => {
   const [quizState, dispatch] = useContext(QuizContext);
 
+  const chooseCategoryAndReorderQuestions = (category) => {
+    dispatch({ type: "START_GAME", payload: category });
+
+    dispatch({ type: "REORDER_QUESTIONS" });
+  };
+
   return (
     <div id="category">
       <h2>Escolha uma categoria</h2>

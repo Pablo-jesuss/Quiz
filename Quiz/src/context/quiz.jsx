@@ -19,6 +19,8 @@ const quizReducer = (state, action) => {
         gameStage: STAGES[1],
       };
 
+    case "START_GAME":
+
     case "REORDER_QUESTIONS":
       const reorderedQuestions = questions.sort(() => {
         return Math.random() - 0.5;

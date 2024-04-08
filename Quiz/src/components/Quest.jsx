@@ -32,8 +32,13 @@ const Quest = () => {
           />
         ))}
       </div>
-      {!quizState.answerSelected && (
-        <>{currentQuestion.tip && <button>Dica</button>}</>
+      {!quizState.answerSelected && !quizState.help && (
+        <>
+          {currentQuestion.tip && (
+            <button onClick={() => dispatch({ type: "SHOW_TIP" })}>Dica</button>
+          )}
+          <button>Excluir uma</button>
+        </>
       )}
       {quizState.answerSelected && (
         <button onClick={() => dispatch({ type: "CHANGE_QUESTION" })}>

@@ -99,6 +99,12 @@ const quizReducer = (state, action) => {
         }
       });
 
+      return {
+        ...state,
+        optionToHide,
+        help: true,
+      };
+
     default:
       return state;
   }

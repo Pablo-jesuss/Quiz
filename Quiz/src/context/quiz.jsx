@@ -24,11 +24,13 @@ const quizReducer = (state, action) => {
     case "START_GAME":
       let quizQuestions = null;
 
-      state.questions.forEach((question) => {
-        if (question.category === action.payload) {
-          quizQuestions = question.questions;
-        }
-      });
+      if (state.questions && state.questions.length > 0) {
+        state.questions.forEach((question) => {
+          if (question.category === action.payload) {
+            quizQuestions = question.questions;
+          }
+        });
+      }
 
       return {
         ...state,
@@ -92,12 +94,17 @@ const quizReducer = (state, action) => {
       let repeat = true;
       let optionToHide;
 
-      questionWithoutOption.option.forEach((option) => {
-        if (option !== questionWithoutOption.answer && repeat) {
-          optionToHide = option;
-          repeat = false;
-        }
-      });
+      if (
+        questionWithoutOption &&
+        Array.isArray(questionWithoutOption.options)
+      ) {
+        questionWithoutOption.options.forEach((option) => {
+          if (option !== questionWithoutOption.answer && repeat) {
+            optionToHide = option;
+            repeat = false;
+          }
+        });
+      }
 
       return {
         ...state,

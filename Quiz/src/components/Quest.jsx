@@ -10,10 +10,12 @@ const Quest = () => {
   const currentQuestion = quizState.questions[quizState.currentQuestion];
 
   const onSelectOption = (option) => {
-    dispatch({
-      type: "CHECK_ANSWER",
-      payload: { answer: currentQuestion.answer, option },
-    });
+    if (!quizState.answerSelected && quizState.help !== "tip") {
+      dispatch({
+        type: "CHECK_ANSWER",
+        payload: { answer: currentQuestion.answer, option },
+      });
+    }
   };
 
   return (
